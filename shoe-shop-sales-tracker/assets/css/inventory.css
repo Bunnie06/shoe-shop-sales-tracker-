@@ -1,0 +1,490 @@
+.inventory-management {
+    display: grid;
+    gap: 2rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--primary-color);
+}
+
+.inventory-filters {
+    padding: 1.5rem;
+}
+
+.filter-form .form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-form .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.75rem 0;
+}
+
+.checkbox-container input {
+    width: auto;
+    margin: 0;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 1px solid var(--medium-gray);
+    border-radius: 3px;
+    position: relative;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-badge.in-stock {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.status-badge.low-stock {
+    background-color: rgba(238, 155, 0, 0.1);
+    color: #ee9b00;
+}
+
+.status-badge.out-of-stock {
+    background-color: rgba(174, 32, 18, 0.1);
+    color: #ae2012;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--medium-gray);
+    color: var(--dark-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--light-gray);
+    border-color: var(--dark-gray);
+}
+
+.text-muted {
+    color: var(--dark-gray);
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+    .text-uppercase {
+    text-transform: uppercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-decoration-none {
+    text-decoration: none;
+}
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+    .text-decoration-line-through {
+    text-decoration: line-through;
+}
+.text-decoration-overline {
+    text-decoration: overline;
+}
+    .text-decoration-blink {
+    text-decoration: blink;
+}
+.text-decoration-none:hover {
+    text-decoration: none;
+}
+.text-decoration-underline:hover {
+    text-decoration: underline;
+}
+.text-decoration-line-through:hover {
+    text-decoration: line-through;
+}
+.text-decoration-overline:hover {
+    text-decoration: overline;
+}
+.text-decoration-blink:hover {
+    text-decoration: blink;
+}
+.text-decoration-none:focus {
+    text-decoration: none;
+}
+.text-decoration-underline:focus {
+    text-decoration: underline;
+}
+.text-decoration-line-through:focus {
+    text-decoration: line-through;
+}
+.text-decoration-overline:focus {
+    text-decoration: overline;
+}
+.text-decoration-blink:focus {
+    text-decoration: blink;
+}
+
+    .text-decoration-none:active {
+    text-decoration: none;
+}
+.text-decoration-underline:active {
+    text-decoration: underline;
+}
+
+    .text-decoration-line-through:active {
+    text-decoration: line-through;
+}
+.text-decoration-overline:active {
+    text-decoration: overline;
+}
+.text-decoration-blink:active {
+    text-decoration: blink;
+}
+/* Responsive design for smaller screens */
+@media (max-width: 600px) { 
+    .inventory-management {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-form .form-row {
+        flex-direction: column;
+    }
+
+    .filter-form .form-group {
+        width: 100%;
+    }
+}
+/* Responsive design for medium screens */
+@media (min-width: 601px) and (max-width: 1024px
+) {
+    .inventory-management {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .filter-form .form-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .filter-form .form-group {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+/* Responsive design for large screens */
+@media (min-width: 1025px) {
+    .inventory-management {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .filter-form .form-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .filter-form .form-group {
+        flex: 1;
+        min-width: 250px;
+    }
+}
+/* Responsive design for extra large screens */
+@media (min-width: 1440px) {
+    .inventory-management {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .filter-form .form-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .filter-form .form-group {
+        flex: 1;
+        min-width: 300px;
+    }
+}
+/* Responsive design for extra small screens */
+@media (max-width: 400px) {
+    .inventory-management {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-form .form-row {
+        flex-direction: column;
+    }
+
+    .filter-form .form-group {
+        width: 100%;
+    }
+}
+    /* Responsive design for small screens */       
+    @media (max-width: 600px) {
+        .inventory-management {
+            grid-template-columns: 1fr;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .filter-form .form-row {
+            flex-direction: column;
+        }
+
+        .filter-form .form-group {
+            width: 100%;
+        }
+    }
+    /* Responsive design for medium screens */
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .inventory-management {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .page-header {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .filter-form .form-row {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .filter-form .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+    }
+    /* Responsive design for large screens */
+    @media (min-width: 1025px) {
+        .inventory-management {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .page-header {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .filter-form .form-row {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .filter-form .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+    }
+    /* Responsive design for extra large screens */
+    @media (min-width: 1440px) {
+        .inventory-management {
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        }
+
+        .page-header {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .filter-form .form-row {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .filter-form .form-group {
+            flex: 1;
+            min-width: 300px;
+        }
+    }
+    /* Responsive design for extra small screens */
+    @media (max-width: 400px) {
+        .inventory-management {
+            grid-template-columns: 1fr;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .filter-form .form-row {
+            flex-direction: column;
+        }
+
+        .filter-form .form-group {
+            width: 100%;
+        }
+    }
+    /* Responsive design for small screens */
+    @media (max-width: 600px) {
+        .inventory-management {
+            grid-template-columns: 1fr;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .filter-form .form-row {
+            flex-direction: column;
+        }
+
+        .filter-form .form-group {
+            width: 100%;
+        }
+    }
+    /* Responsive design for medium screens */
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .inventory-management {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .page-header {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .filter-form .form-row {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .filter-form .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+    }
+    /* Responsive design for large screens */
+    @media (min-width: 1025px) {
+        .inventory-management {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .page-header {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .filter-form .form-row {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .filter-form .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+    }
+    /* Responsive design for extra large screens */
+    @media (min-width: 1440px)  {
+        .inventory-management {
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        }
+
+        .page-header {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .filter-form .form-row {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .filter-form .form-group {
+            flex: 1;
+            min-width: 300px;
+        }
+    }
+    
